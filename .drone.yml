@@ -51,12 +51,10 @@ steps:
   - echo DRONE_TARGET_BRANCH:${DRONE_TARGET_BRANCH}
 
 - name: android
-  image: runmymind/docker-android-sdk
-  volumes:
-  - name: gradle
-    path: /root/.gradle
+  image: circleci/android:api-28
   commands:
-  - ./gradlew clean check
+  - cd ~
+  - echo $PWD
 
 - name: flutter
   image: cirrusci/flutter:1.1.0
@@ -64,3 +62,7 @@ steps:
   - flutter --version
   - cd ~
   - echo $PWD
+
+volumes:
+- name: gradle
+  temp: {}
