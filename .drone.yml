@@ -49,3 +49,18 @@ steps:
   - echo DRONE_SYSTEM_VERSION:${DRONE_SYSTEM_VERSION}
 #  - echo DRONE_TAG:${DRONE_TAG}
   - echo DRONE_TARGET_BRANCH:${DRONE_TARGET_BRANCH}
+
+- name: android
+  image: runmymind/docker-android-sdk
+  volumes:
+  - name: gradle
+    path: /root/.gradle
+  commands:
+  - ./gradlew clean check
+
+- name: flutter
+  image: cirrusci/flutter:1.1.0
+  commands:
+  - flutter --version
+  - cd ~
+  - echo $PWD
