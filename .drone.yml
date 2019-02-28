@@ -60,6 +60,7 @@ steps:
   - cd ~
   - echo $PWD
   - ls -a
+  - ls .gradle
 
 - name: flutter
   image: cirrusci/flutter:1.1.0
@@ -71,6 +72,7 @@ steps:
   - cd ~
   - echo $PWD
   - ls -a
+  - ls .pub-cache
 
 volumes:
 - name: gradle
