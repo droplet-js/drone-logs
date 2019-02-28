@@ -63,7 +63,7 @@ steps:
   - ls .gradle
 
 - name: flutter
-  image: cirrusci/flutter:1.1.0
+  image: nathansamson/flutter-builder-docker:v1.0.0
   volumes:
   - name: pub-cache
     path: /root/.pub-cache
