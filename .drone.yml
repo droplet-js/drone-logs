@@ -57,22 +57,16 @@ steps:
     path: /root/.gradle
   commands:
   - echo $ANDROID_HOME
-  - cd ~
-  - echo $PWD
-  - ls -a
-  - ls .gradle
+  - find / -name '.gradle' -type d
 
 - name: flutter
   image: nathansamson/flutter-builder-docker:v1.0.0
   volumes:
   - name: pub-cache
-    path: /root/.pub-cache
+    path: /opt/flutter/.pub-cache
   commands:
   - flutter --version
-  - cd ~
-  - echo $PWD
-  - ls -a
-  - ls .pub-cache
+  - find / -name '.pub-cache' -type d
 
 volumes:
 - name: gradle
