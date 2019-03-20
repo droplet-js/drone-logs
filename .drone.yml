@@ -66,6 +66,9 @@ steps:
     path: /opt/flutter/.pub-cache
   commands:
   - flutter --version
+  - git clone https://github.com/v7lin/fake_wechat.git
+  - cd fake_wechat/example/
+  - flutter build apk
   - find / -name '.pub-cache' -type d
   - find / -name '.gradle' -type d
 
