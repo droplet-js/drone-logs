@@ -60,13 +60,14 @@ steps:
   - find / -name '.gradle' -type d
 
 - name: flutter
-  image: nathansamson/flutter-builder-docker:v1.0.0
+  image: v7lin/flutter:1.2.1-stable
   volumes:
   - name: pub-cache
     path: /opt/flutter/.pub-cache
   commands:
   - flutter --version
   - find / -name '.pub-cache' -type d
+  - find / -name '.gradle' -type d
 
 volumes:
 - name: gradle
