@@ -71,7 +71,7 @@ steps:
   - find / -name '.pub-cache' -type d
   - find / -name '.gradle' -type d
 
-- name: flutter
+- name: flutter-docker
   image: appleboy/flutter-docker
   commands:
   - flutter --version
