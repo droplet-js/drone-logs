@@ -71,6 +71,12 @@ steps:
   - find / -name '.pub-cache' -type d
   - find / -name '.gradle' -type d
 
+- name: flutter
+  image: appleboy/flutter-docker
+  commands:
+  - flutter --version
+  - find / -name '.pub-cache' -type d
+
 volumes:
 - name: gradle
   temp: {}
