@@ -73,6 +73,9 @@ steps:
 
 - name: flutter-docker
   image: appleboy/flutter-docker
+  volumes:
+  - name: pub-cache
+    path: /flutter/.pub-cache
   commands:
   - flutter --version
   - find / -name '.pub-cache' -type d
