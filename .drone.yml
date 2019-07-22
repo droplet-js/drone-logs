@@ -80,6 +80,12 @@ steps:
   - flutter --version
   - find / -name '.pub-cache' -type d
 
+- name: dart
+  image: google/dart
+  commands:
+  - dart --version
+  - find / -name '.pub-cache' -type d
+
 volumes:
 - name: gradle
   temp: {}
